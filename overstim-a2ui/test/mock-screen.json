@@ -1,0 +1,24 @@
+{
+  "title": "How the last two weeks felt",
+  "params": { "user": "all", "days": 14 },
+  "queries": [
+    { "id": "sum", "tool": "summary", "args": { "user": "$user", "days": "$days" } },
+    { "id": "daily", "tool": "daily_levels", "args": { "user": "$user", "days": "$days" } },
+    { "id": "bands", "tool": "band_mix", "args": { "user": "$user", "days": "$days" } },
+    { "id": "hours", "tool": "hourly_load", "args": { "user": "$user", "days": "$days" } }
+  ],
+  "root": "main",
+  "components": [
+    { "id": "main", "type": "Column", "children": ["h", "pick", "stats", "line", "bars", "hourly", "ask"] },
+    { "id": "h", "type": "Heading", "text": "How the last stretch felt", "level": 1 },
+    { "id": "pick", "type": "Picker", "label": "Range", "param": "days", "options": [{ "label": "7 days", "value": 7 }, { "label": "14 days", "value": 14 }, { "label": "30 days", "value": 30 }] },
+    { "id": "stats", "type": "Row", "children": ["s1", "s2", "s3"] },
+    { "id": "s1", "type": "Stat", "label": "Launches", "data": "sum", "field": "launches" },
+    { "id": "s2", "type": "Stat", "label": "Active days", "data": "sum", "field": "active_days" },
+    { "id": "s3", "type": "Stat", "label": "Average relief per break", "data": "sum", "field": "avg_relief" },
+    { "id": "line", "type": "LineChart", "label": "Daily peak level", "data": "daily", "x": "date", "y": "peak" },
+    { "id": "bars", "type": "BarChart", "label": "Time spent in each band", "data": "bands", "x": "band", "y": "share_percent" },
+    { "id": "hourly", "type": "BarChart", "label": "Average level by hour", "data": "hours", "x": "hour", "y": "average_level" },
+    { "id": "ask", "type": "ApprovalCard", "title": "Try an earlier break reminder?", "body": "A gentle nudge before the loaded band, as an experiment.", "approveLabel": "Yes, try it", "declineLabel": "Not now" }
+  ]
+}

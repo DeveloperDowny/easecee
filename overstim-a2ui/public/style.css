@@ -1,0 +1,33 @@
+:root{--bg:#f6f4ef;--card:#fffdf9;--ink:#2d2a26;--soft:#6e675e;--line:#e4dfd5;--accent:#5f8a8b;--accent-ink:#fff;--calm:#8fb8a5;--steady:#c9c28f;--loaded:#d9a77c;--frayed:#c98a8a}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1c1a;--card:#262421;--ink:#e9e5dd;--soft:#a39b8f;--line:#37342f;--accent:#7fb0b1;--accent-ink:#14201f;--calm:#6f9a87;--steady:#a8a171;--loaded:#b98a62;--frayed:#a96d6d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 56px}
+h1{font-size:1.35rem;font-weight:600;margin:0}
+h2{font-size:1.1rem;font-weight:600;margin:0}
+h3{font-size:.95rem;font-weight:600;margin:0 0 8px;color:var(--soft)}
+.sub,.hint{color:var(--soft);margin:4px 0 20px}
+.col{display:flex;flex-direction:column;gap:16px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.row>*{flex:1 1 180px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat .v{font-size:1.9rem;font-weight:600;line-height:1.2}
+.stat .l{color:var(--soft);font-size:.9rem}
+.callout{border-left:4px solid var(--accent);background:var(--card);padding:12px 16px;border-radius:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chips>span{color:var(--soft);font-size:.9rem}
+button{font:inherit;cursor:pointer;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;min-height:40px}
+button[aria-pressed=true],button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.link{border:0;background:none;color:var(--accent);padding:0;min-height:0;text-decoration:underline}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#ask{display:flex;gap:8px;margin-top:24px}
+input{flex:1;font:inherit;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:44px}
+#status{color:var(--soft);min-height:1.5em;margin:8px 0 0}
+.sr{position:absolute;left:-9999px}
+svg{width:100%;height:auto;display:block}
+svg text{fill:var(--soft);font-size:15px}
+details{margin-top:8px;color:var(--soft);font-size:.9rem}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+.done{color:var(--soft)}
+@media (prefers-reduced-motion:no-preference){*{transition:none}}

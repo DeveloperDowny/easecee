@@ -1,0 +1,1 @@
+{ "name": "overstim-a2ui", "version": "0.1.0", "private": true, "description": "Agent-drawn analytics for the overstimulation launcher (A2UI-inspired)", "scripts": { "start": "node server.js", "dev:mock": "MOCK_AGENT=1 node server.js" }, "engines": { "node": ">=20" } }

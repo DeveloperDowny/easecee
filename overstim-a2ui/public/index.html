@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiet Analytics</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Quiet Analytics</h1>
+    <p class="sub">Ask about your overstimulation launcher data. The agent designs the screen; this app draws it.</p>
+  </header>
+  <section id="screen" aria-live="polite">
+    <p class="hint">Try: <button class="link" data-q="How have the last two weeks looked overall?">how have the last two weeks looked?</button>
+      or <button class="link" data-q="When in the day do people get most loaded, and which apps drive it?">when do people get most loaded?</button></p>
+  </section>
+  <form id="ask" autocomplete="off">
+    <label for="q" class="sr">Your question</label>
+    <input id="q" placeholder="Ask in your own words" maxlength="300">
+    <button type="submit">Show me</button>
+  </form>
+  <p id="status" role="status"></p>
+</main>
+<script src="renderer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
